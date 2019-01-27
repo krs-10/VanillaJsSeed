@@ -1,0 +1,35 @@
+* {
+	box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+}
+
+img{
+	max-width: 100%; 
+	height: auto; 
+}
+
+.root__container{
+	display: flex; 
+	flex-flow: column nowrap; 
+	justify-content: flex-start; 
+	padding: 2rem; 
+}
+
+.canvas--first{
+	position: absolute; 
+}
+
+.image{
+	flex: 1 0 100%; 
+}
+
+.scaled--half{
+	transform: scale(0.5)
+}
+
+.results__container{
+	display: flex;
+	flex-flow: column nowrap; 
+
+}
