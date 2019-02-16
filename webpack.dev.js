@@ -32,7 +32,6 @@ const DEVELOPMENT = {
     }
   },
   devServer: {
-
     contentBase: path.resolve(__dirname, "src"),
     watchContentBase: true,
     host: "0.0.0.0",
