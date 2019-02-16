@@ -55,7 +55,6 @@ const COMMON_PLUGINS = [
     inject: true,
     template: path.resolve(__dirname, "src/index.html"),
     sourceMap: true,
-    chunksSortMode: "dependency"
   })
 ];
 

@@ -13,7 +13,6 @@ const externals = [];
 const DEVELOPMENT = {
   mode: 'development',
   entry: {
-    // vendor: ['@babel/polyfill'],
     client: path.resolve(__dirname, "src/index.js")
   },
   optimization: {

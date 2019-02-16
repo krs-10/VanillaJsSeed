@@ -24,6 +24,7 @@ const PRODUCTION = {
     publicPath: ""
   },
   optimization: {
+    mangleWasmImports: true,
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
@@ -42,6 +43,7 @@ const PRODUCTION = {
         }
       })
     ],
+    // runtimeChunk: "single",
     runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
@@ -93,7 +95,7 @@ const PRODUCTION = {
   plugins: [
     new CleanWebpackPlugin("build", {}),
     new MiniCssExtractPlugin({ filename: "[name].css" }),
-    // new BundleAnalyzerPlugin({ open: true })
+    new BundleAnalyzerPlugin({ open: true })
     // new WebpackMd5Hash
   ]
 };
