@@ -13,8 +13,7 @@ const externals = [];
 const DEVELOPMENT = {
   mode: 'development',
   entry: {
-    // vendor: ['@babel/polyfill', 'p5'], 
-    vendor: ['@babel/polyfill'],
+    // vendor: ['@babel/polyfill'],
     client: path.resolve(__dirname, "src/index.js")
   },
   optimization: {
@@ -33,7 +32,9 @@ const DEVELOPMENT = {
     }
   },
   devServer: {
+
     contentBase: path.resolve(__dirname, "src"),
+    watchContentBase: true,
     host: "0.0.0.0",
     port: 8080,
     hot: true,
@@ -51,7 +52,7 @@ const DEVELOPMENT = {
             loader: "css-loader",
             options: {
               importLoaders: 1,
-              sourceMaps: true,
+              sourceMap: true,
             }
           },
           "postcss-loader"

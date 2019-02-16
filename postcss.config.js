@@ -5,9 +5,9 @@ const config = () => ({
 	plugins: [
 		postcssPresetEnv({
 			stage: 0,
-			// features: {
-			// 	'nesting-rules': true
-			// }
+			features: {
+				'nesting-rules': true
+			}
 		})
 	]
 })
