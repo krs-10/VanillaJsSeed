@@ -4,7 +4,7 @@ const express = require('express');
 
 // const compiler = webpack(config);
 const app = express(), 
-	DIST_DIR = path.resolve(__dirname, 'build'), 
+	DIST_DIR = path.resolve(__dirname, 'dist'), 
 	HTML_FILE = path.resolve(DIST_DIR, 'index.html');
 
 app.use(express.static(DIST_DIR));

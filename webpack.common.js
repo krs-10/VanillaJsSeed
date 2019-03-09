@@ -1,6 +1,7 @@
-const path = require("path"), 
-	webpack = require("webpack"), 
+const path = require("path"),
+	webpack = require("webpack"),
 	HtmlWebpackPlugin = require("html-webpack-plugin");
+
 
 const COMMON_RULES = [
 	// js
@@ -11,17 +12,17 @@ const COMMON_RULES = [
 	},
 	// images
 	{
-		test: /\.(jpe?g|gif|png|svg|JPG)$/,
+		test: /\.(jpe?g|gif|png|JPG|svg)$/,
 		use: [
 			{
 				loader: "file-loader",
 				options: {
 					name: "[name].[ext]",
-					outputPath: "public/images/"
 				}
-			}
-		]
-	}, 
+			},
+		],
+	},
+
 	// fonts
 	{
 		test: /\.(ttf|eot|otf|woff(2)?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -34,36 +35,48 @@ const COMMON_RULES = [
 	},
 ]
 
+const COMMON_EXTERNALS = {
+
+}
 
 const COMMON_RESOLVE = {
-		extensions : [".js", ".jsx", ".json"],
-		alias: {
-			components: path.resolve(__dirname, 'src/components/'),
-			styles: path.resolve(__dirname, 'src/styles/'),
-			assets: path.resolve(__dirname, 'src/assets/'),
-		}
-	}; 
+	extensions: [".js", ".jsx", ".json"],
+	alias: {
+		components: path.resolve(__dirname, 'src/components/'),
+		styles: path.resolve(__dirname, 'src/styles/'),
+		assets: path.resolve(__dirname, 'src/assets/'),
+		store: path.resolve(__dirname, 'store/')
+	}
+};
 
 const COMMON_OUTPUT = {
-		path: path.resolve(__dirname, "build"),
-		filename: "[name].[hash].js",
-		chunkFilename: "[name].[hash].bundle.js",
-	}; 
+	path: path.resolve(__dirname, "dist"),
+	filename: "[name].[hash].js",
+	chunkFilename: "[name].[hash].bundle.js",
+};
 
 const COMMON_PLUGINS = [
-  new HtmlWebpackPlugin({
-    inject: true,
-    template: path.resolve(__dirname, "src/index.html"),
-    sourceMap: true,
-  })
+	new webpack.ProvidePlugin({
+		'React': 'react',
+		'Component': ['react', 'Component'],
+		'Fragment': ['react', 'Fragment']
+	}),
+	new HtmlWebpackPlugin({
+		inject: true,
+		hash: true,
+		template: path.resolve(__dirname, "src/index.html"),
+		sourceMap: true,
+	})
 ];
 
+
 const COMMON = {
-	resolve: COMMON_RESOLVE, 
-	output: COMMON_OUTPUT, 
+	resolve: COMMON_RESOLVE,
+	externals: COMMON_EXTERNALS,
+	output: COMMON_OUTPUT,
 	module: {
 		rules: COMMON_RULES
-	}, 
+	},
 	plugins: COMMON_PLUGINS
 }
 

@@ -2,34 +2,45 @@
 
 const webpack = require("webpack"),
   path = require("path"),
+  CopyWebpackPlugin = require("copy-webpack-plugin"),
   HtmlWebpackPlugin = require("html-webpack-plugin"),
+  CompressionPlugin = require('compression-webpack-plugin'),
   MiniCssExtractPlugin = require("mini-css-extract-plugin"),
   CleanWebpackPlugin = require("clean-webpack-plugin"),
   OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"),
-  UglifyJsPlugin = require("uglifyjs-webpack-plugin"),
+  OfflinePlugin = require("offline-plugin"),
   BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
     .BundleAnalyzerPlugin;
+  
 
-const merge = require("webpack-merge"), 
-  common = require('./webpack.common.js');
+
+const TerserPlugin = require("terser-webpack-plugin");
+
+const merge = require("webpack-merge"),
+  common = require("./webpack.common.js");
 
 const externals = [];
 
 const PRODUCTION = {
   mode: "production",
-  entry: {
-    client: path.resolve(__dirname, "src/index.js")
-  },
+  entry: [
+    path.resolve(__dirname, "src/sw.js"),
+    path.resolve(__dirname, "src/index.js")  
+  ],
   output: {
     publicPath: ""
   },
   optimization: {
+    minimize: true,
     mangleWasmImports: true,
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: true,
         parallel: true,
-        sourceMap: false // set to true if you want JS source maps
+        sourceMap: false,
+        terserOptions: {
+          mangle: true
+        }
       }),
       new OptimizeCssAssetsPlugin({
         cssProcessorPluginOptions: {
@@ -43,7 +54,6 @@ const PRODUCTION = {
         }
       })
     ],
-    // runtimeChunk: "single",
     runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {
@@ -93,12 +103,15 @@ const PRODUCTION = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin("build", {}),
+    new CleanWebpackPlugin("dist", {}),
+    new webpack.AutomaticPrefetchPlugin(),
     new MiniCssExtractPlugin({ filename: "[name].css" }),
-    new BundleAnalyzerPlugin({ open: true })
-    // new WebpackMd5Hash
+    new CopyWebpackPlugin(
+      [{ from: "src/assets", to: "assets" }]
+    ),
+    new CompressionPlugin(),
+    new OfflinePlugin()
   ]
 };
 
-
-module.exports = merge(common, PRODUCTION)
+module.exports = merge(common, PRODUCTION);

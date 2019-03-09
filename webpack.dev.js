@@ -21,20 +21,20 @@ const DEVELOPMENT = {
       cacheGroups: {
         vendor: {
           test: /node_modules/,
-          chunks: "initial", 
-          name: "vendor", 
+          chunks: "initial",
+          name: "vendor",
           reuseExistingChunk: true,
           priority: -10,
           enforce: true
-        }, 
+        },
       }
     }
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "src"),
+    contentBase: [path.resolve(__dirname, "src")],
     watchContentBase: true,
     host: "0.0.0.0",
-    port: 8080,
+    port: 3000,
     hot: true,
     inline: true,
     historyApiFallback: true,
