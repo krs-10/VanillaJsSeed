@@ -14,11 +14,22 @@ Good question! It's broken and the initial components are horrible, so I wouldn'
 
 ---
 ### Installation
-**I haven't set up a target repo yet**\
-Run ```sh init.sh```, and follow the prompts. After the script runs, head over to [Github's "Create a New Repo" page](https://github.com/new). Enter the same repo name from the script output, and away you will go - the upstream is already set for you :)
+**I haven't set up a target repo yet**
+```bash
+wget https://raw.githubusercontent.com/krs-10/VanillaJsSeed/master/create_new.sh
 
-**I already set up my target repo**\
-Run ```sh existing.sh```. When prompted, enter your existing repo's SSH/HTTPS clone link - your upstream will be set to that new value.
+sh create_new.sh
+```
+
+Follow the script promps. After the script runs, head over to [Github's "Create a New Repo" page](https://github.com/new). Enter the same repo name from the script output, and away you will go - the upstream is already set for you :)
+
+**I already set up my target repo**
+```bash
+wget https://raw.githubusercontent.com/krs-10/VanillaJsSeed/master/create_existing.sh
+
+sh create_existing.sh
+```
+When prompted, enter your existing repo's SSH/HTTPS clone link - your upstream will be set to that new value.
 
 **Okay, I have a target repo**\
 Cool cool. Get started with this
