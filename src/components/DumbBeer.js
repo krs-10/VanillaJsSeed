@@ -19,7 +19,7 @@ class DumbBeer extends HTMLElement {
     this.style = customElStyle;
     this.shadow = shadow;
     shadow.appendChild(style);
-	shadow.appendChild(div);
+	  shadow.appendChild(div);
 	
     this.classList.add("square");
     this.endpoint = "https://api.punkapi.com/v2/beers/random";
