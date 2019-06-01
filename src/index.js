@@ -1,8 +1,11 @@
 
 require("./styles/skeleton.css");
 require("./styles/main.css");
-require("./router.js");
 
-import { DumbBeer } from './components';
 
-customElements.define("dumb-beer", DumbBeer);
+import { DumbBeer, CustomCanvas } from './components';
+
+import "./components/Test"; 
+
+// customElements.define("dumb-beer", DumbBeer);
+customElements.define("custom-canvas", CustomCanvas); 

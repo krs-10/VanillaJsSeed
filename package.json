@@ -22,7 +22,10 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.4.5",
     "express": "^4.17.1",
-    "navigo": "^7.1.2"
+    "konva": "^3.2.6",
+    "navigo": "^7.1.2",
+    "rxjs": "^6.0.0-alpha.4",
+    "webgl-ui": "^0.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

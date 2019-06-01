@@ -42,25 +42,25 @@ class DumbBeer extends HTMLElement {
     return callBeer;
   }
   async connectedCallback() {
-    console.log("=================================");
-    console.log("Custom square element added to page.");
+    // console.log("=================================");
+    // console.log("Custom square element added to page.");
   }
   disconnectedCallback() {
-    console.log("=================================");
-    console.log("Custom square element removed from page.");
-    console.log("this :", this);
+    // console.log("=================================");
+    // console.log("Custom square element removed from page.");
+    // console.log("this :", this);
   }
   adoptedCallback() {
-    console.log("=================================");
-    console.log("Custom square element moved to new page.");
-    console.log("this :", this);
+    // console.log("=================================");
+    // console.log("Custom square element moved to new page.");
+    // console.log("this :", this);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log("=================================");
-    console.log("Custom square element attributes changed.");
-    console.log("this :", this);
-    console.log("name, oldValue, newValue: ", name, oldValue, newValue);
+    // console.log("=================================");
+    // console.log("Custom square element attributes changed.");
+    // console.log("this :", this);
+    // console.log("name, oldValue, newValue: ", name, oldValue, newValue);
   }
 }
 

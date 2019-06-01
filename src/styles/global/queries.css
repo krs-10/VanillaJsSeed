@@ -1,0 +1,20 @@
+:root{
+	--mq-sm: 20em; /* 320px */
+	--mq-md: 40em; /* 640px */
+	--mq-lg: 60em; /* 960px */
+	--mq-max: 80em; /* 1280px */
+}
+
+
+@custom-media --phone-range (20em <= width <= 60em);
+@custom-media --tablet-range (40em <= width <= 80em);
+@custom-media --desktop-range (60em <= width <= 80em);
+
+@custom-media --min (width < 20em);
+@custom-media --sm (width < 20em); 
+@custom-media --sm-plus (width >= 20em);
+@custom-media --md (width < 40em);
+@custom-media --md-plus (width >= 40em);
+@custom-media --lg (width < 60em);
+@custom-media --lg-plus (width >= 60em);
+@custom-media --max (width > 80em);

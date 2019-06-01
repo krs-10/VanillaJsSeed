@@ -4213,6 +4213,11 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
+konva@^3.2.6:
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/konva/-/konva-3.2.6.tgz#06c595544cd27a99256c8eb45a7abbd3be1a31d4"
+  integrity sha512-Sq+MkK8PC/ZKX2T5S+7SH0O7oL+ah0F+M4l+s5LcxBvDXMMkk9FA09KS9N5HAGItwJhJfp5dwiLbh30VoqKL0A==
+
 last-call-webpack-plugin@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/last-call-webpack-plugin/-/last-call-webpack-plugin-3.0.0.tgz#9742df0e10e3cf46e5c0381c2de90d3a7a2d7555"
@@ -6916,6 +6921,13 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
+rxjs@^6.0.0-alpha.4:
+  version "6.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.0.0-alpha.4.tgz#e24afa7457d95a981f081d2979c3ba69b20c8ca3"
+  integrity sha512-eRBlvArSLPDgqL2A5uLSReu+HuAbgJvwF0rYnTrVQOiLZywYXvrDIsIF3T6l2UURnHH/sdNZiQf4EyVWgsZJ5A==
+  dependencies:
+    tslib "^1.9.0"
+
 safe-buffer@5.1.2, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@^5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -7589,6 +7601,11 @@ text-table@~0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
 
+three@^0.88.0:
+  version "0.88.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.88.0.tgz#4256c2fc38e4fb23a0d23eba2b6cce4df8e466d5"
+  integrity sha1-QlbC/Djk+yOg0j66K2zOTfjkZtU=
+
 through2@^2.0.0:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
@@ -8017,6 +8034,13 @@ wcwidth@^1.0.0:
   integrity sha1-8LDc+RW8X/FSivrbLA4XtTLaL+g=
   dependencies:
     defaults "^1.0.3"
+
+webgl-ui@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/webgl-ui/-/webgl-ui-0.1.2.tgz#05b0e18ce9e2defd1fb52785f665cda0c1e60e92"
+  integrity sha512-bxXSmjWavMUhRHWwcXcZN08nyBrtTOuNJfg/4TiUdlLTcmr1psrelsamj2sHmMulovtR4IKdTLnxs4BW2f46sQ==
+  dependencies:
+    three "^0.88.0"
 
 webpack-bundle-analyzer@^3.3.2:
   version "3.3.2"

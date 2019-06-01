@@ -1,0 +1,17 @@
+:root{
+	--header-background: #f5f5f5;
+	--header-border: #e3e3e3;
+	--header-background: #f5f5f5;
+	--header-color: #4a4a4a;
+
+	--toolbar-background: #333333;
+	--toolbar-border: #333333;
+	--toolbar-color: #ebebeb;
+}
+
+.is-full{
+	--header-background: #333333;
+	--header-border: #333333;
+	--header-color: #ebebeb;
+}
+

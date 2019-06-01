@@ -1,0 +1,13 @@
+:root{
+	--root-font-size: 16px; 
+	--root-font-percentage: 62.5%; 
+
+	--base: 16;
+	--base-max: 20; 
+	--base-size: 10; 
+	--base-rem: 1.6rem; 
+	--base-max-rem: 2rem; 
+	--base-min-rem: 1.4rem;
+
+}
+

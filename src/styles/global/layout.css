@@ -1,0 +1,54 @@
+:root {
+  --root-fluid: calc(0.5rem + ((0.5vmin - 3.2px) * 1.5));
+  /* The 0.5vmin is to help alleviate some  viewport height issues w/ certain devices */
+  /* heading size in mockup was 40px, and mockup width was 640 - assuming this will be the average ratio for all type elements/spacing/etc. */
+  font-size: var(--root-fluid);
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", "Helvetica", sans-serif;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (--sm) {
+  :root {
+    font-size: 6px;
+  }
+}
+
+@media (--lg-plus) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.is-full {
+  & {
+    overflow: hidden;
+  }
+}
